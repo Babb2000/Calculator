@@ -39,10 +39,20 @@
 
 .container{
     margin-top: 5%;
-    width: 500px;
+    width: 450px;
     height: 600px;
     border: 1px solid silver;
     border-radius: 15px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: flex-start;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	align-items: center;
+
+	
 
 }
 
@@ -54,4 +64,21 @@
 
 .container:hover{
     box-shadow: 10px 5px 5px silver;
+}
+
+.top-screen{
+	margin-top: 25px;
+	border: 1px solid white;
+	border-radius: 15px;
+	width: 415px;
+	height: 100px;
+	background-color: white;
+}
+
+.key-container{
+	width: 415px;
+	border: 1px solid white;
+	border-radius: 15px;
+	height: 425px;
+
 }

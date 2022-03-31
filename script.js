@@ -45,6 +45,11 @@ function operate(string, num1, num2)
 }
 /*Arithmetic Functions ^^^*/
 
+function zero(){
+    let zero = 0;
+    return zero;
+}
+
 
 //Turns off the "Turn on"
 function turnOffText()
@@ -55,7 +60,8 @@ function turnOffText()
     
     next.parentElement.removeChild(next);
     
-  
+    let newZero = zero()
+    displayNumbers(newZero);
 }
 
 //Function to set up display screen
@@ -74,11 +80,102 @@ function turnOn()
 
     newDiv.appendChild(txt);
 
-    setTimeout(turnOffText, 3000);
-    
-    
-   
-
+    setTimeout(turnOffText, 1500);
     
 }
+
+function displayNumbers(anyNumber){
+    let container = document.getElementById("top-screen");
+    let div = document.createElement('div');
+    
+    container.appendChild(div);
+    container.style.display = "flex";
+    container.style.justifyContent = "center";
+    container.style.alignItems = "center";
+    div.style.fontSize = "40px";
+
+    let next = container.firstChild.nextSibling;
+    next.textContent = anyNumber;
+
+}
+
+
+function numberOne (){
+    let number1 = 1;
+    displayNumbers(number1);
+}
+
+
+function numberTwo (){
+    let number2 = 2;
+    displayNumbers(number2);
+}
+
+
+function numberThree(){
+    let number3 = 3;
+    displayNumbers(number3)
+}
+
+
+function numberFour(){
+    let number4 = 4;
+    displayNumbers(number4)
+}
+
+
+function numberFive(){
+    let number5 = 5;
+    displayNumbers(number5);
+}
+
+
+function numberSix(){
+    let number6 = 6;
+    displayNumbers(number6);
+}
+
+
+function numberSeven(){
+    let number7 = 7;
+    displayNumbers(number7);
+}
+
+
+function numberEight(){
+    let number8 = 8;
+    displayNumbers(number8);
+}
+
+
+function numberNine(){
+    let number9 = 9;
+    displayNumbers(number9);
+}
+
+
+function addtheNumbers(){
+    let stringA = "add";
+    return stringA;
+}
+let newAdd = addtheNumbers();
+
+function subtheNumbers(){
+    let stringS = "subtract";
+    return stringS;
+}
+let newSub = subtheNumbers();
+
+function multtheNumbers(){
+    let stringM = "multiply";
+    return stringM;
+}
+let newMul = multtheNumbers();
+
+function divtheNumbers(){
+    let stringD = "divide";
+    return stringD;
+}
+let newdiv = divtheNumbers();
+
 

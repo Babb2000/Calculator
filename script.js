@@ -46,17 +46,26 @@ function operate(string, num1, num2)
 /*Arithmetic Functions ^^^*/
 
 
+//Turns off the "Turn on"
+function turnOffText()
+{
+    let container = document.getElementById("top-screen");
+    container.style.backgroundColor = "silver";
+    let next = container.firstChild.nextSibling.firstChild;
+    
+    next.parentElement.removeChild(next);
+    
+  
+}
 
-//On click function to turn on the display screen
- 
+//Function to set up display screen
 function turnOn()
 {
     let container = document.getElementById('top-screen');
     container.style.backgroundColor = "silver";
     let newDiv = document.createElement('div');
-    
     let txt = document.createTextNode("Turning On");
-    
+
     container.appendChild(newDiv);
     container.style.display = "flex";
     container.style.justifyContent = "center";
@@ -65,6 +74,10 @@ function turnOn()
 
     newDiv.appendChild(txt);
 
+    setTimeout(turnOffText, 3000);
+    
+    
+   
 
     
 }

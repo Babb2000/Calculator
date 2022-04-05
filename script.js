@@ -2,6 +2,7 @@
 
 //Global variable to hold temporary current number being clicked
 let tempNumber1 = 0;
+let tempHolder = 0;
 
 function addNum(num1, num2)
 {
@@ -25,6 +26,7 @@ function divdNum(num1, num2)
 
 function operate(string, num1, num2)
 {
+    console.log(string, num1, num2);
     if(string === "add")
     {
         let an = addNum(num1,num2);
@@ -157,8 +159,15 @@ function numberNine(){
     displayNumbers(number9);
 }
 
+function holdFirstNum (num1){
+    tempHolder = num1;
+}
+
+ 
 function addtheNumbers(){
     let stringA = "add";
+    let holdNum = tempNumber1;
+    holdFirstNum(holdNum); //Function holds original value clicked on 
     return stringA;
 }
 let newAdd = addtheNumbers();
@@ -172,18 +181,25 @@ let newSub = subtheNumbers();
 function multtheNumbers(){
     let stringM = "multiply";
     return stringM;
+    
 }
 let newMul = multtheNumbers();
 
 function divtheNumbers(){
     let stringD = "divide";
     return stringD;
+    
 }
 
 let newdiv = divtheNumbers();
 
 
 function numEquals(){
-    operate(newAdd, tempNumber1, 2);
+    operate(newAdd, tempHolder, tempNumber1);
 }
+
+
+
+
+
 

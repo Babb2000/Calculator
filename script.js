@@ -1,5 +1,8 @@
 /* Arithmetic Functions*/
 
+//Global variable to hold temporary current number being clicked
+let tempNumber1 = 0;
+
 function addNum(num1, num2)
 {
     return(num1 + num2);
@@ -25,7 +28,7 @@ function operate(string, num1, num2)
     if(string === "add")
     {
         let an = addNum(num1,num2);
-        console.log(an);
+        displayNumbers(an);
     }
     else if(string === "subtract")
     {
@@ -81,8 +84,8 @@ function turnOn()
     newDiv.appendChild(txt);
 
     setTimeout(turnOffText, 1500);
-    
 }
+
 
 function displayNumbers(anyNumber){
     let container = document.getElementById("top-screen");
@@ -102,57 +105,57 @@ function displayNumbers(anyNumber){
 
 function numberOne (){
     let number1 = 1;
+    tempNumber1 = number1;
     displayNumbers(number1);
 }
 
-
 function numberTwo (){
     let number2 = 2;
+    tempNumber1 = number2;
     displayNumbers(number2);
 }
 
-
 function numberThree(){
     let number3 = 3;
+    tempNumber1 = number3;
     displayNumbers(number3)
 }
 
-
 function numberFour(){
     let number4 = 4;
+    tempNumber1 = number4;
     displayNumbers(number4)
 }
 
-
 function numberFive(){
     let number5 = 5;
+    tempNumber1 = number5;
     displayNumbers(number5);
 }
 
-
 function numberSix(){
     let number6 = 6;
+    tempNumber1 = number6;
     displayNumbers(number6);
 }
 
-
 function numberSeven(){
     let number7 = 7;
+    tempNumber1 = number7;
     displayNumbers(number7);
 }
 
-
 function numberEight(){
     let number8 = 8;
+    tempNumber1 = number8;
     displayNumbers(number8);
 }
 
-
 function numberNine(){
     let number9 = 9;
+    tempNumber1 = number9;
     displayNumbers(number9);
 }
-
 
 function addtheNumbers(){
     let stringA = "add";
@@ -176,6 +179,11 @@ function divtheNumbers(){
     let stringD = "divide";
     return stringD;
 }
+
 let newdiv = divtheNumbers();
 
+
+function numEquals(){
+    operate(newAdd, tempNumber1, 2);
+}
 

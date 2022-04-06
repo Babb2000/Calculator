@@ -1,8 +1,8 @@
 /* Arithmetic Functions*/
 
 //Global variable to hold temporary current number being clicked
-let tempNumber1 = 0;
-let tempHolder = 0;
+let tempNumber1 = "0";
+let tempHolder = "0";
 
 function addNum(num1, num2)
 {
@@ -49,11 +49,6 @@ function operate(string, num1, num2)
     }
 }
 /*Arithmetic Functions ^^^*/
-
-function zero(){
-    let zero = 0;
-    return zero;
-}
 
 
 //Turns off the "Turn on"
@@ -104,59 +99,95 @@ function displayNumbers(anyNumber){
 
 }
 
+function displaySymbol(symbol){
+    let container = document.getElementById("top-screen");
+    let div = document.createElement('div');
+    
+    container.appendChild(div);
+    container.style.display = "flex";
+    container.style.justifyContent = "center";
+    container.style.alignItems = "center";
+    div.style.fontSize = "110px";
+    div.style.textEmphasisColor = "black";
+
+    let next = container.firstChild.nextSibling;
+    next.textContent = symbol;
+
+}
+
+function clearDisplay(){
+    let container = document.getElementById("top-screen");
+    let div = document.createElement('div');
+    container.appendChild(div);
+    container.style.display = "flex";
+    container.style.justifyContent = "center";
+    container.style.alignItems = "center";
+    div.style.fontSize = "40px";
+
+    let next = container.firstChild.nextSibling;
+    next.textContent = " ";
+
+}
+
+
+function zero(){
+    let zero = "0";
+    tempNumber1 = "0";
+    return zero;
+}
 
 function numberOne (){
-    let number1 = 1;
-    tempNumber1 = number1;
-    displayNumbers(number1);
+    let number1 = "1";
+    tempNumber1 += number1;
+    displayNumbers(tempNumber1);
 }
 
 function numberTwo (){
-    let number2 = 2;
-    tempNumber1 = number2;
-    displayNumbers(number2);
+    let number2 = "2";
+    tempNumber1 += number2;
+    displayNumbers(tempNumber1);
 }
 
 function numberThree(){
-    let number3 = 3;
-    tempNumber1 = number3;
-    displayNumbers(number3)
+    let number3 = "3";
+    tempNumber1 += number3;
+    displayNumbers(tempNumber1)
 }
 
 function numberFour(){
-    let number4 = 4;
-    tempNumber1 = number4;
-    displayNumbers(number4)
+    let number4 = "4";
+    tempNumber1 += number4;
+    displayNumbers(tempNumber1)
 }
 
 function numberFive(){
-    let number5 = 5;
-    tempNumber1 = number5;
-    displayNumbers(number5);
+    let number5 = "5";
+    tempNumber1 += number5;
+    displayNumbers(tempNumber1);
 }
 
 function numberSix(){
-    let number6 = 6;
+    let number6 = "6";
     tempNumber1 = number6;
-    displayNumbers(number6);
+    displayNumbers(tempNumber1);
 }
 
 function numberSeven(){
-    let number7 = 7;
-    tempNumber1 = number7;
-    displayNumbers(number7);
+    let number7 = "7";
+    tempNumber1 += number7;
+    displayNumbers(tempNumber1);
 }
 
 function numberEight(){
-    let number8 = 8;
-    tempNumber1 = number8;
-    displayNumbers(number8);
+    let number8 = "8";
+    tempNumber1 += number8;
+    displayNumbers(tempNumber1);
 }
 
 function numberNine(){
-    let number9 = 9;
-    tempNumber1 = number9;
-    displayNumbers(number9);
+    let number9 = "9";
+    tempNumber1 += number9;
+    displayNumbers(tempNumber1);
 }
 
 function holdFirstNum (num1){
@@ -168,9 +199,12 @@ function addtheNumbers(){
     let stringA = "add";
     let holdNum = tempNumber1;
     holdFirstNum(holdNum); //Function holds original value clicked on 
+    tempNumber1 = "0";
     return stringA;
+    
 }
 let newAdd = addtheNumbers();
+
 
 function subtheNumbers(){
     let stringS = "subtract";
@@ -190,13 +224,22 @@ function divtheNumbers(){
     return stringD;
     
 }
+let newDiv = divtheNumbers();
 
-let newdiv = divtheNumbers();
+
 
 
 function numEquals(){
-    operate(newAdd, tempHolder, tempNumber1);
+    let convertedTemp = parseInt(tempHolder);
+    let convertedTemp2 = parseInt(tempNumber1);
+    console.log(convertedTemp, convertedTemp2);
+    operate(newAdd, convertedTemp, convertedTemp2);
 }
+
+
+
+
+
 
 
 

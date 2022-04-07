@@ -33,49 +33,41 @@ function operate(string, num1, num2)
     
     if(string === "add")
     {
-        console.log(num1, num2);
+        
         let an = addNum(num1,num2);
-        console.log(an);
         displayNumbers(an);
-        //tempNumber1 = "0"; //Code to clear the previous data
-        //tempHolder = "0";
         addThem = " ";
+        tempHolder = " ";
+        tempNumber1 = " ";
     }
     else if(string === "subtract")
     {
-        console.log(num1, num2);
         let ans = subNum(num1, num2);
-        console.log(ans);
         displayNumbers(ans);
-        //tempNumber1 = "0";
-        //tempHolder = "0";
         subThem = " ";
+        tempHolder = " ";
+        tempNumber1 = " ";
     }
     else if(string === "multiply")
     {
-       console.log(num1, num2);
        let answ = multNum(num1, num2);
-       console.log(answ);
-       console.log(answ);
        displayNumbers(answ);
-       //tempNumber1 = "0";
-       //tempHolder = "0";
        multThem = " ";
+       tempHolder = " ";
+       tempNumber1 = " ";
     }
     else if(string === "divide")
     {
         if(num2 === 0)
         {
-            displaySymbol("Sorry can't divide by zero");
+            displayNumbers("Sorry can't divide by zero");
             return;
         }
-        console.log(num1, num2); 
         let answer = divdNum(num1, num2);
-        console.log(answer);
         displayNumbers(answer);
-        //tempNumber1 = "0";
-        //tempHolder = "0";
         divThem = " ";
+        tempHolder = " ";
+        tempNumber1 = " ";
        
     }
 }
@@ -127,6 +119,7 @@ function displayNumbers(anyNumber){
 
     let next = container.firstChild.nextSibling;
     next.textContent = anyNumber;
+    next.style.fontSize = "40px";
 
 }
 
@@ -143,6 +136,7 @@ function displaySymbol(symbol){
 
     let next = container.firstChild.nextSibling;
     next.textContent = symbol;
+    next.style.fontSize = "110px";
 
 }
 
@@ -159,7 +153,6 @@ function clearDisplay(){
     next.textContent = " ";
 
 }
-
 
 function zero(){
     let zero = "0";
@@ -247,16 +240,14 @@ function subtheNumbers(){
     
 }
 
-
 function multtheNumbers(){
-    displaySymbol("X");
+    displaySymbol("×");
     let stringM = "multiply";
     multThem = stringM;
     let holdNum = tempNumber1;
     holdFirstNum(holdNum);
     tempNumber1 = "0";
 }
-
 
 function divtheNumbers(){
     displaySymbol("÷");
@@ -266,8 +257,6 @@ function divtheNumbers(){
     holdFirstNum(holdNum);
     tempNumber1 = "0";
 }
-
-
 
 function numEquals(){
         if(addThem === "add")

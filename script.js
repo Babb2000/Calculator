@@ -1,9 +1,8 @@
 /* Arithmetic Functions*/
 
-//Global variable to hold temporary current number being clicked
+//Global variables to hold temporary current number being clicked
 let tempNumber1 = "0";
 let tempHolder = "0";
-
 let addThem = " ";
 let subThem = " ";
 let multThem = " ";
@@ -38,8 +37,8 @@ function operate(string, num1, num2)
         let an = addNum(num1,num2);
         console.log(an);
         displayNumbers(an);
-        tempNumber1 = "0"; //Code to clear the previous data
-        tempHolder = "0";
+        //tempNumber1 = "0"; //Code to clear the previous data
+        //tempHolder = "0";
         addThem = " ";
     }
     else if(string === "subtract")
@@ -48,8 +47,8 @@ function operate(string, num1, num2)
         let ans = subNum(num1, num2);
         console.log(ans);
         displayNumbers(ans);
-        tempNumber1 = "0";
-        tempHolder = "0";
+        //tempNumber1 = "0";
+        //tempHolder = "0";
         subThem = " ";
     }
     else if(string === "multiply")
@@ -59,8 +58,8 @@ function operate(string, num1, num2)
        console.log(answ);
        console.log(answ);
        displayNumbers(answ);
-       tempNumber1 = "0";
-       tempHolder = "0";
+       //tempNumber1 = "0";
+       //tempHolder = "0";
        multThem = " ";
     }
     else if(string === "divide")
@@ -74,8 +73,8 @@ function operate(string, num1, num2)
         let answer = divdNum(num1, num2);
         console.log(answer);
         displayNumbers(answer);
-        tempNumber1 = "0";
-        tempHolder = "0";
+        //tempNumber1 = "0";
+        //tempHolder = "0";
         divThem = " ";
        
     }
@@ -164,7 +163,9 @@ function clearDisplay(){
 
 function zero(){
     let zero = "0";
-    tempNumber1 = "0";
+    tempNumber1 = zero;
+    displayNumbers(tempNumber1);
+
     return zero;
 }
 
@@ -228,16 +229,16 @@ function holdFirstNum (num1){
 
  
 function addtheNumbers(){
+    displaySymbol("+");
     let stringA = "add";
     addThem = stringA;
     let holdNum = tempNumber1;
     holdFirstNum(holdNum); //Function holds original value clicked on 
     tempNumber1 = "0";
 }
-//let newAdd = addtheNumbers();
-
 
 function subtheNumbers(){
+    displaySymbol("-");
     let stringS = "subtract";
     subThem = stringS;
     let holdNum = tempNumber1;
@@ -245,9 +246,10 @@ function subtheNumbers(){
     tempNumber1 = "0";
     
 }
-//let newSub = subtheNumbers();
+
 
 function multtheNumbers(){
+    displaySymbol("X");
     let stringM = "multiply";
     multThem = stringM;
     let holdNum = tempNumber1;
@@ -257,12 +259,12 @@ function multtheNumbers(){
 
 
 function divtheNumbers(){
+    displaySymbol("÷");
     let stringD = "divide";
     divThem = stringD;
     let holdNum = tempNumber1
     holdFirstNum(holdNum);
     tempNumber1 = "0";
-    
 }
 
 

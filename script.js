@@ -34,27 +34,50 @@ function operate(string, num1, num2)
     
     if(string === "add")
     {
+        console.log(num1, num2);
         let an = addNum(num1,num2);
+        console.log(an);
         displayNumbers(an);
-        tempNumber1 = "0";
+        tempNumber1 = "0"; //Code to clear the previous data
         tempHolder = "0";
+        addThem = " ";
     }
     else if(string === "subtract")
     {
+        console.log(num1, num2);
         let ans = subNum(num1, num2);
+        console.log(ans);
         displayNumbers(ans);
         tempNumber1 = "0";
         tempHolder = "0";
+        subThem = " ";
     }
     else if(string === "multiply")
     {
+       console.log(num1, num2);
        let answ = multNum(num1, num2);
        console.log(answ);
+       console.log(answ);
+       displayNumbers(answ);
+       tempNumber1 = "0";
+       tempHolder = "0";
+       multThem = " ";
     }
     else if(string === "divide")
     {
-       let answer = divdNum(num1, num2);
-       console.log(answer);
+        if(num2 === 0)
+        {
+            displaySymbol("Sorry can't divide by zero");
+            return;
+        }
+        console.log(num1, num2); 
+        let answer = divdNum(num1, num2);
+        console.log(answer);
+        displayNumbers(answer);
+        tempNumber1 = "0";
+        tempHolder = "0";
+        divThem = " ";
+       
     }
 }
 /*Arithmetic Functions ^^^*/
@@ -231,7 +254,7 @@ function multtheNumbers(){
     holdFirstNum(holdNum);
     tempNumber1 = "0";
 }
-//let newMul = multtheNumbers();
+
 
 function divtheNumbers(){
     let stringD = "divide";
@@ -241,23 +264,33 @@ function divtheNumbers(){
     tempNumber1 = "0";
     
 }
-//let newDiv = divtheNumbers();
-
 
 
 
 function numEquals(){
         if(addThem === "add")
         {
-        let convertedAdd = parseInt(tempHolder);
-        let convertedAdd2 = parseInt(tempNumber1);
-        operate(addThem, convertedAdd, convertedAdd2);
+            let convertedAdd = parseInt(tempHolder);
+            let convertedAdd2 = parseInt(tempNumber1);
+            operate(addThem, convertedAdd, convertedAdd2);
         }
         else if(subThem === "subtract")
         {
-        let convertedSub = parseInt(tempHolder);
-        let convertedSub2 = parseInt(tempNumber1);
-        operate(subThem, convertedSub, convertedSub2);   
+            let convertedSub = parseInt(tempHolder);
+            let convertedSub2 = parseInt(tempNumber1);
+            operate(subThem, convertedSub, convertedSub2);   
+        }
+        else if(multThem === "multiply")
+        {
+            let convertedMult = parseInt(tempHolder);
+            let convertedMult2 = parseInt(tempNumber1);
+            operate(multThem, convertedMult, convertedMult2); 
+        }
+        else if(divThem === "divide")
+        {
+            let converteddiv = parseInt(tempHolder);
+            let converteddiv2 = parseInt(tempNumber1);
+            operate(divThem, converteddiv, converteddiv2); 
         }
 }
 

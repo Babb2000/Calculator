@@ -4,6 +4,11 @@
 let tempNumber1 = "0";
 let tempHolder = "0";
 
+let addThem = " ";
+let subThem = " ";
+let multThem = " ";
+let divThem = " ";
+
 function addNum(num1, num2)
 {
     return(num1 + num2);
@@ -26,16 +31,20 @@ function divdNum(num1, num2)
 
 function operate(string, num1, num2)
 {
-    console.log(string, num1, num2);
+    
     if(string === "add")
     {
         let an = addNum(num1,num2);
         displayNumbers(an);
+        tempNumber1 = "0";
+        tempHolder = "0";
     }
     else if(string === "subtract")
     {
         let ans = subNum(num1, num2);
-        console.log(ans);
+        displayNumbers(ans);
+        tempNumber1 = "0";
+        tempHolder = "0";
     }
     else if(string === "multiply")
     {
@@ -197,48 +206,60 @@ function holdFirstNum (num1){
  
 function addtheNumbers(){
     let stringA = "add";
+    addThem = stringA;
     let holdNum = tempNumber1;
     holdFirstNum(holdNum); //Function holds original value clicked on 
     tempNumber1 = "0";
-    return stringA;
-    
 }
-let newAdd = addtheNumbers();
+//let newAdd = addtheNumbers();
 
 
 function subtheNumbers(){
     let stringS = "subtract";
-    return stringS;
+    subThem = stringS;
+    let holdNum = tempNumber1;
+    holdFirstNum(holdNum);
+    tempNumber1 = "0";
+    
 }
-let newSub = subtheNumbers();
+//let newSub = subtheNumbers();
 
 function multtheNumbers(){
     let stringM = "multiply";
-    return stringM;
-    
+    multThem = stringM;
+    let holdNum = tempNumber1;
+    holdFirstNum(holdNum);
+    tempNumber1 = "0";
 }
-let newMul = multtheNumbers();
+//let newMul = multtheNumbers();
 
 function divtheNumbers(){
     let stringD = "divide";
-    return stringD;
+    divThem = stringD;
+    let holdNum = tempNumber1
+    holdFirstNum(holdNum);
+    tempNumber1 = "0";
     
 }
-let newDiv = divtheNumbers();
+//let newDiv = divtheNumbers();
 
 
 
 
 function numEquals(){
-    let convertedTemp = parseInt(tempHolder);
-    let convertedTemp2 = parseInt(tempNumber1);
-    console.log(convertedTemp, convertedTemp2);
-    operate(newAdd, convertedTemp, convertedTemp2);
+        if(addThem === "add")
+        {
+        let convertedAdd = parseInt(tempHolder);
+        let convertedAdd2 = parseInt(tempNumber1);
+        operate(addThem, convertedAdd, convertedAdd2);
+        }
+        else if(subThem === "subtract")
+        {
+        let convertedSub = parseInt(tempHolder);
+        let convertedSub2 = parseInt(tempNumber1);
+        operate(subThem, convertedSub, convertedSub2);   
+        }
 }
-
-
-
-
 
 
 

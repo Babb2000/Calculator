@@ -285,7 +285,16 @@ function numEquals(){
         }
 }
 
+//Create a module to organize the add,sub,mult, divide methods
+const calculator = (() => {
+    const add = (a, b) => a + b;
+    const sub = (a, b) => a - b;
+    const mult = (a, b) => a * b;
+    const div = (a, b) => a / b;
 
+
+    return {add,sub,mult,div};
+})();
 
 
 

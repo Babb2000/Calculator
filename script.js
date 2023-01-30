@@ -93,6 +93,7 @@ function turnOn()
     let container = document.getElementById('top-screen');
     container.style.backgroundColor = "silver";
     let newDiv = document.createElement('div');
+    newDiv.classList.add('free');
     let txt = document.createTextNode("Turning On");
 
     container.appendChild(newDiv);
@@ -105,15 +106,16 @@ function turnOn()
 
     setTimeout(turnOffText, 1500);
 
-    turnOn = function(){
+   turnOn = function(){ //Assign an empty function to invoke the turnOn function only once
 
-    }
+   }
 }
 
 
 function displayNumbers(anyNumber){
     let container = document.getElementById("top-screen");
     let div = document.createElement('div');
+    
     
     container.appendChild(div);
     container.style.display = "flex";
@@ -130,6 +132,7 @@ function displayNumbers(anyNumber){
 function displaySymbol(symbol){
     let container = document.getElementById("top-screen");
     let div = document.createElement('div');
+    
     
     container.appendChild(div);
     container.style.display = "flex";
@@ -290,7 +293,12 @@ function numEquals(){
 }
 
 
+function backSpace(){
 
+    let container = document.getElementsByClassName("free");
+    let result = container.textContent;
+    console.log(result);
 
+}
 
 

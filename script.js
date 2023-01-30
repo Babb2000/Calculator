@@ -104,6 +104,10 @@ function turnOn()
     newDiv.appendChild(txt);
 
     setTimeout(turnOffText, 1500);
+
+    turnOn = function(){
+        
+    }
 }
 
 

@@ -91,18 +91,23 @@ function turnOffText()
 function turnOn()
 {
     let container = document.getElementById('top-screen');
-    container.style.backgroundColor = "silver";
+    let rightCornerDiv = container.childNodes[1]; //Since the the first element in the nodelist is a text node grab the preceding one
+    console.log(rightCornerDiv);
+    
+    rightCornerDiv.style.backgroundColor = "silver";
     let newDiv = document.createElement('div');
     newDiv.classList.add('free');
     let txt = document.createTextNode("Turning On");
 
-    container.appendChild(newDiv);
-    container.style.display = "flex";
-    container.style.justifyContent = "center";
-    container.style.alignItems = "center";
+
+    rightCornerDiv.appendChild(newDiv);
+    rightCornerDiv.style.display = "flex";
+    rightCornerDiv.style.justifyContent = "center";
+    rightCornerDiv.style.alignItems = "center";
     newDiv.style.fontSize = "40px";
 
     newDiv.appendChild(txt);
+    container.appendChild(rightCornerDiv);
 
     setTimeout(turnOffText, 1500);
 

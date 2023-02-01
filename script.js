@@ -165,7 +165,7 @@ function zero(){
     let zero = "0";
     tempNumber1 = zero;
     displayNumbers(tempNumber1);
-
+    
     return zero;
 }
 
@@ -296,9 +296,12 @@ function numEquals(){
 function backSpace(){
 
     let container = document.getElementsByClassName("free");
-    let result = container.textContent;
-    console.log(result);
-
+    const holder = Array.from(container);
+    holder.forEach(function(element){
+        console.log(element);
+    })
 }
+
+backSpace();
 
 

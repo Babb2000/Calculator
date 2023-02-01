@@ -114,14 +114,19 @@ function turnOn()
 
 function displayNumbers(anyNumber){
     let container = document.getElementById("top-screen");
-    let div = document.createElement('div');
+    let divHolder = container.firstChild.textContent;
+    console.log(divHolder);
+    //let div = document.createElement('div');
+    
+    //Instead of creating a whole new div eachtime a calculation is made try to get the content out of the current div
     
     
-    container.appendChild(div);
+    /*container.appendChild(div);
     container.style.display = "flex";
     container.style.justifyContent = "center";
     container.style.alignItems = "center";
     div.style.fontSize = "40px";
+    */
 
     let next = container.firstChild.nextSibling;
     next.textContent = anyNumber;
@@ -294,14 +299,10 @@ function numEquals(){
 
 
 function backSpace(){
-
-    let container = document.getElementsByClassName("free");
-    const holder = Array.from(container);
-    holder.forEach(function(element){
-        console.log(element);
-    })
+    let container = document.getElementsByClassName(".free");
+    let divGrabber = container.firstChild;
+    console.log(divGrabber);
+    
 }
-
-backSpace();
 
 

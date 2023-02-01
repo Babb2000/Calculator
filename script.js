@@ -77,7 +77,7 @@ function operate(string, num1, num2)
 //Turns off the "Turn on"
 function turnOffText()
 {
-    let container = document.getElementById("top-screen");
+    let container = document.getElementsByClassName("top-screen");
     container.style.backgroundColor = "silver";
     let next = container.firstChild.nextSibling.firstChild;
     
@@ -106,16 +106,22 @@ function turnOn()
 
     setTimeout(turnOffText, 1500);
 
+
    turnOn = function(){ //Assign an empty function to invoke the turnOn function only once
 
    }
 }
 
+function rightCorner(){ //Function to display current calculation being made
+    
+}
 
 function displayNumbers(anyNumber){
+        
     let container = document.getElementById("top-screen");
-    let divHolder = container.firstChild.textContent;
-    console.log(divHolder);
+    let div = container.firstChild.textContent;
+    console.log(div);
+    
     //let div = document.createElement('div');
     
     //Instead of creating a whole new div eachtime a calculation is made try to get the content out of the current div
@@ -149,6 +155,9 @@ function displaySymbol(symbol){
     let next = container.firstChild.nextSibling;
     next.textContent = symbol;
     next.style.fontSize = "110px";
+
+
+    //Display symbol on top right corner of the screenx
 
 }
 

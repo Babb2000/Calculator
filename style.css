@@ -129,6 +129,8 @@
 	/*display: flex;*/
 }
 
-.firstScreen{
-	
+.rightScreen{
+	height: 50px;
+	width: 207.5; 
+	border-radius: 15px;
 }

@@ -199,7 +199,7 @@ function numberOne (){
 
 function numberTwo (){
     let number2 = "2";
-    if(tempNumber1 === 0)
+    if(tempNumber1 === "0")
     {
         tempNumber1 = " ";
     }
@@ -209,7 +209,7 @@ function numberTwo (){
 
 function numberThree(){
     let number3 = "3";
-    if(tempNumber1 === 0)
+    if(tempNumber1 === "0")
     {
         tempNumber1 = " ";
     }
@@ -219,7 +219,7 @@ function numberThree(){
 
 function numberFour(){
     let number4 = "4";
-    if(tempNumber1 === 0)
+    if(tempNumber1 === "0")
     {
         tempNumber1 = " ";
     }
@@ -229,7 +229,7 @@ function numberFour(){
 
 function numberFive(){
     let number5 = "5";
-    if(tempNumber1 === 0)
+    if(tempNumber1 === "0")
     {
         tempNumber1 = " ";
     }
@@ -239,7 +239,7 @@ function numberFive(){
 
 function numberSix(){
     let number6 = "6";
-    if(tempNumber1 === 0)
+    if(tempNumber1 === "0")
     {
         tempNumber1 = " ";
     }
@@ -249,7 +249,7 @@ function numberSix(){
 
 function numberSeven(){
     let number7 = "7";
-    if(tempNumber1 === 0)
+    if(tempNumber1 === "0")
     {
         tempNumber1 = " ";
     }
@@ -259,7 +259,7 @@ function numberSeven(){
 
 function numberEight(){
     let number8 = "8";
-    if(tempNumber1 === 0)
+    if(tempNumber1 === "0")
     {
         tempNumber1 = " ";
     }
@@ -269,7 +269,7 @@ function numberEight(){
 
 function numberNine(){
     let number9 = "9";
-    if(tempNumber1 === 0)
+    if(tempNumber1 === "0")
     {
         tempNumber1 = " ";
     }

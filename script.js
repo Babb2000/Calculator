@@ -79,8 +79,7 @@ function turnOffText()
 {
     let container = document.getElementById("top-screen");
     let next = container.childNodes[2];
-    console.log(next);
-    
+
     let newZero = zero()
     displayNumbers(newZero);
 }
@@ -114,9 +113,6 @@ function turnOn()
    }
 }
 
-function rightCorner(){ //Function to display current calculation being made
-    
-}
 
 function displayNumbers(anyNumber){
     console.log(anyNumber);
@@ -144,9 +140,9 @@ function displayNumbers(anyNumber){
 
 }
 
+
 function displaySymbol(symbol){
-    console.log(symbol);
-    operationWindow(symbol);
+    
     let container = document.getElementById("top-screen");
     let div = document.createElement('div');
     
@@ -192,54 +188,91 @@ function zero(){
 
 function numberOne (){
     let number1 = "1";
+    console.log(tempNumber1);
+    if(tempNumber1 === "0")
+    {
+        tempNumber1 = " ";
+    }
     tempNumber1 += number1;
     displayNumbers(tempNumber1);
 }
 
 function numberTwo (){
     let number2 = "2";
+    if(tempNumber1 === 0)
+    {
+        tempNumber1 = " ";
+    }
     tempNumber1 += number2;
     displayNumbers(tempNumber1);
 }
 
 function numberThree(){
     let number3 = "3";
+    if(tempNumber1 === 0)
+    {
+        tempNumber1 = " ";
+    }
     tempNumber1 += number3;
     displayNumbers(tempNumber1)
 }
 
 function numberFour(){
     let number4 = "4";
+    if(tempNumber1 === 0)
+    {
+        tempNumber1 = " ";
+    }
     tempNumber1 += number4;
     displayNumbers(tempNumber1)
 }
 
 function numberFive(){
     let number5 = "5";
+    if(tempNumber1 === 0)
+    {
+        tempNumber1 = " ";
+    }
     tempNumber1 += number5;
     displayNumbers(tempNumber1);
 }
 
 function numberSix(){
     let number6 = "6";
+    if(tempNumber1 === 0)
+    {
+        tempNumber1 = " ";
+    }
     tempNumber1 += number6;
     displayNumbers(tempNumber1);
 }
 
 function numberSeven(){
     let number7 = "7";
+    if(tempNumber1 === 0)
+    {
+        tempNumber1 = " ";
+    }
     tempNumber1 += number7;
     displayNumbers(tempNumber1);
 }
 
 function numberEight(){
     let number8 = "8";
+    if(tempNumber1 === 0)
+    {
+        tempNumber1 = " ";
+    }
     tempNumber1 += number8;
     displayNumbers(tempNumber1);
 }
 
 function numberNine(){
     let number9 = "9";
+    if(tempNumber1 === 0)
+    {
+        tempNumber1 = " ";
+    }
     tempNumber1 += number9;
     displayNumbers(tempNumber1);
 }
@@ -320,11 +353,5 @@ function numEquals(){
         }
 }
 
-
-function operationWindow(){
-    let container = document.getElementById("top-screen");
-    let div = container.lastChild;
-    console.log(div);
-}
 
 

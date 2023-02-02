@@ -77,11 +77,11 @@ function operate(string, num1, num2)
 //Turns off the "Turn on"
 function turnOffText()
 {
-    let container = document.getElementsByClassName("top-screen");
-    container.style.backgroundColor = "silver";
-    let next = container.firstChild.nextSibling.firstChild;
+    let container = document.getElementsByClassName("divWrapper");
+    let next = container.childNodes[1];
+    console.log(next);
     
-    next.parentElement.removeChild(next);
+    //next.parentElement.removeChild(next);
     
     let newZero = zero()
     displayNumbers(newZero);
@@ -91,23 +91,23 @@ function turnOffText()
 function turnOn()
 {
     let container = document.getElementById('top-screen');
-    let rightCornerDiv = container.childNodes[1]; //Since the the first element in the nodelist is a text node grab the preceding one
-    console.log(rightCornerDiv);
+    let divWrapper = container.childNodes[1]; //Since the the first element in the nodelist is a text node grab the preceding one
+    console.log(divWrapper);
     
-    rightCornerDiv.style.backgroundColor = "silver";
+    container.style.backgroundColor = "silver";
     let newDiv = document.createElement('div');
     newDiv.classList.add('free');
     let txt = document.createTextNode("Turning On");
 
 
-    rightCornerDiv.appendChild(newDiv);
-    rightCornerDiv.style.display = "flex";
-    rightCornerDiv.style.justifyContent = "center";
-    rightCornerDiv.style.alignItems = "center";
+    divWrapper.appendChild(newDiv);
+    divWrapper.style.display = "flex";
+    divWrapper.style.justifyContent = "center";
+    divWrapper.style.alignItems = "center";
     newDiv.style.fontSize = "40px";
 
     newDiv.appendChild(txt);
-    container.appendChild(rightCornerDiv);
+    container.appendChild(divWrapper);
 
     setTimeout(turnOffText, 1500);
 
@@ -139,7 +139,8 @@ function displayNumbers(anyNumber){
     div.style.fontSize = "40px";
     */
 
-    let next = container.firstChild.nextSibling;
+    let next = container.lastChild;
+    console.log(next);
     next.textContent = anyNumber;
     next.style.fontSize = "40px";
 

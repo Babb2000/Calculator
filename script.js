@@ -1,7 +1,7 @@
 /* Arithmetic Functions*/
 
 //Global variables to hold temporary current number being clicked
-let tempNumber1 = "0";
+let tempNumber1 = " ";
 let tempHolder = "0";
 let addThem = " ";
 let subThem = " ";
@@ -93,6 +93,7 @@ function turnOn()
     
     container.style.backgroundColor = "silver";
     let newDiv = document.createElement('div');
+    newDiv.classList.add("firstScreen");
     let txt = document.createTextNode("Turning On");
 
 
@@ -118,10 +119,11 @@ function rightCorner(){ //Function to display current calculation being made
 }
 
 function displayNumbers(anyNumber){
+    console.log(anyNumber);
         
     let container = document.getElementById("top-screen");
     let div = container.firstChild.textContent;
-    console.log(div);
+    
     
     //let div = document.createElement('div');
     
@@ -143,11 +145,13 @@ function displayNumbers(anyNumber){
 }
 
 function displaySymbol(symbol){
+    console.log(symbol);
+    operationWindow(symbol);
     let container = document.getElementById("top-screen");
     let div = document.createElement('div');
     
     
-    container.appendChild(div);
+    /*container.appendChild(div);
     container.style.display = "flex";
     container.style.justifyContent = "center";
     container.style.alignItems = "center";
@@ -157,6 +161,7 @@ function displaySymbol(symbol){
     let next = container.firstChild.nextSibling;
     next.textContent = symbol;
     next.style.fontSize = "110px";
+    */
 
 
     //Display symbol on top right corner of the screenx
@@ -217,7 +222,7 @@ function numberFive(){
 
 function numberSix(){
     let number6 = "6";
-    tempNumber1 = number6;
+    tempNumber1 += number6;
     displayNumbers(tempNumber1);
 }
 
@@ -237,6 +242,13 @@ function numberNine(){
     let number9 = "9";
     tempNumber1 += number9;
     displayNumbers(tempNumber1);
+}
+
+function numberZero(){
+    tempNumber1 = " ";
+    let number0 = "0";
+    tempNumber1 += number0;
+    displayNumbers(number0);
 }
 
 function holdFirstNum (num1){
@@ -309,11 +321,10 @@ function numEquals(){
 }
 
 
-function backSpace(){
-    let container = document.getElementsByClassName(".free");
-    let divGrabber = container.firstChild;
-    console.log(divGrabber);
-    
+function operationWindow(){
+    let container = document.getElementById("top-screen");
+    let div = container.lastChild;
+    console.log(div);
 }
 
 

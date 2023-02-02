@@ -77,11 +77,9 @@ function operate(string, num1, num2)
 //Turns off the "Turn on"
 function turnOffText()
 {
-    let container = document.getElementsByClassName("divWrapper");
-    let next = container.childNodes[1];
+    let container = document.getElementById("top-screen");
+    let next = container.childNodes[2];
     console.log(next);
-    
-    //next.parentElement.removeChild(next);
     
     let newZero = zero()
     displayNumbers(newZero);
@@ -92,11 +90,9 @@ function turnOn()
 {
     let container = document.getElementById('top-screen');
     let divWrapper = container.childNodes[1]; //Since the the first element in the nodelist is a text node grab the preceding one
-    console.log(divWrapper);
     
     container.style.backgroundColor = "silver";
     let newDiv = document.createElement('div');
-    newDiv.classList.add('free');
     let txt = document.createTextNode("Turning On");
 
 
@@ -140,7 +136,7 @@ function displayNumbers(anyNumber){
     */
 
     let next = container.lastChild;
-    console.log(next);
+    
     next.textContent = anyNumber;
     next.style.fontSize = "40px";
 

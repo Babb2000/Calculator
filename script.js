@@ -134,7 +134,7 @@ function displayNumbers(anyNumber){
     */
 
     let next = container.lastChild;
-    
+
     next.textContent = anyNumber;
     next.style.fontSize = "40px";
 
@@ -142,9 +142,8 @@ function displayNumbers(anyNumber){
 
 
 function displaySymbol(symbol){
-    
-    let container = document.getElementById("top-screen");
-    let div = document.createElement('div');
+     
+    operandScreen(tempNumber1, symbol);
     
     
     /*container.appendChild(div);
@@ -352,5 +351,19 @@ function numEquals(){
         }
 }
 
+
+function operandScreen(firstNum, symbol){
+    let container = document.getElementsByClassName("divWrapper")[0];
+    console.log(container);
+    let newDiv = document.createElement('div');
+    let txt1 = document.createElement('p');
+    txt1.innerText = firstNum;
+    let txt2 = document.createElement('p');
+    txt2.innerText = symbol;
+    newDiv.classList.add('.rightScreen');
+
+    newDiv.appendChild(txt1, txt2);
+    container.appendChild(newDiv);
+}
 
 

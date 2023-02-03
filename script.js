@@ -152,21 +152,6 @@ function displaySymbol(symbol){
    
     container.insertAdjacentElement('beforeend', text);
 
-    /*container.appendChild(div);
-    container.style.display = "flex";
-    container.style.justifyContent = "center";
-    container.style.alignItems = "center";
-    div.style.fontSize = "110px";
-    div.style.textEmphasisColor = "black";
-
-    let next = container.firstChild.nextSibling;
-    next.textContent = symbol;
-    next.style.fontSize = "110px";
-    */
-
-
-    //Display symbol on top right corner of the screenx
-
 }
 
 function clearDisplay(){

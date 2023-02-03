@@ -142,10 +142,16 @@ function displayNumbers(anyNumber){
 
 
 function displaySymbol(symbol){
+     let text = document.createElement('div');
+     text.classList.add("space")
      
-    operandScreen(tempNumber1, symbol);
-    
-    
+     let newSymbol = symbol.padStart(5);
+     console.log(newSymbol);
+     text.innerText = newSymbol;
+    let container = document.getElementsByClassName('divWrapper')[0];
+   
+    container.insertAdjacentElement('beforeend', text);
+
     /*container.appendChild(div);
     container.style.display = "flex";
     container.style.justifyContent = "center";
@@ -352,18 +358,6 @@ function numEquals(){
 }
 
 
-function operandScreen(firstNum, symbol){
-    let container = document.getElementsByClassName("divWrapper")[0];
-    console.log(container);
-    let newDiv = document.createElement('div');
-    let txt1 = document.createElement('p');
-    txt1.innerText = firstNum;
-    let txt2 = document.createElement('p');
-    txt2.innerText = symbol;
-    newDiv.classList.add('.rightScreen');
 
-    newDiv.appendChild(txt1, txt2);
-    container.appendChild(newDiv);
-}
 
 

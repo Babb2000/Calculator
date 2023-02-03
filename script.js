@@ -278,10 +278,9 @@ function numberNine(){
 }
 
 function numberZero(){
-    tempNumber1 = " ";
     let number0 = "0";
     tempNumber1 += number0;
-    displayNumbers(number0);
+    displayNumbers(tempNumber1);
 }
 
 function holdFirstNum (num1){

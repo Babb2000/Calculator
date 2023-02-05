@@ -87,9 +87,10 @@ function turnOffText()
 //Function to set up display screen
 function turnOn()
 {
+    //Make sure that if other buttons were clicked before the on button, the DOM is cleared.
+    
     let container = document.getElementById('top-screen');
     let divWrapper = container.childNodes[1]; //Since the the first element in the nodelist is a text node grab the preceding one
-    
     container.style.backgroundColor = "silver";
     let newDiv = document.createElement('div');
     newDiv.classList.add("firstScreen");
@@ -115,23 +116,10 @@ function turnOn()
 
 
 function displayNumbers(anyNumber){
-    console.log(anyNumber);
-        
     let container = document.getElementById("top-screen");
     let div = container.firstChild.textContent;
     
-    
-    //let div = document.createElement('div');
-    
-    //Instead of creating a whole new div eachtime a calculation is made try to get the content out of the current div
-    
-    
-    /*container.appendChild(div);
-    container.style.display = "flex";
-    container.style.justifyContent = "center";
-    container.style.alignItems = "center";
-    div.style.fontSize = "40px";
-    */
+
 
     let next = container.lastChild;
 
@@ -341,6 +329,17 @@ function numEquals(){
             operate(divThem, converteddiv, converteddiv2); 
         }
 }
+
+
+function negativePositive(){
+    let container = document.getElementsByClassName("divWrapper")[0];
+    let newNum = (tempNumber1 * 2);
+    let newNum2 = tempNumber1 - newNum;
+    displayNumbers(newNum2);
+    console.log(newNum2);
+
+}
+
 
 
 

@@ -332,12 +332,11 @@ function numEquals(){
 
 
 function negativePositive(){
-    let container = document.getElementsByClassName("divWrapper")[0];
     let newNum = (tempNumber1 * 2);
     let newNum2 = tempNumber1 - newNum;
-    displayNumbers(newNum2);
-    console.log(newNum2);
-
+    tempNumber1 = newNum2;
+    displayNumbers(tempNumber1);
+    
 }
 
 

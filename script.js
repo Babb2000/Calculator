@@ -341,7 +341,16 @@ function negativePositive(){
     
 }
 
+function backSpace(){
+    let container = document.getElementsByClassName("divWrapper")[0].textContent;
+    let newString = container.slice(0,-1);
+    tempNumber1 = newString;
+    displayNumbers(tempNumber1);
+    
+  
+    
 
+}
 
 
 

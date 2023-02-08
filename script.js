@@ -137,8 +137,9 @@ function displaySymbol(symbol){
      console.log(newSymbol);
      text.innerText = newSymbol;
     let container = document.getElementsByClassName('divWrapper')[0];
-   
     container.insertAdjacentElement('beforeend', text);
+
+    
 
 }
 
@@ -263,6 +264,7 @@ function numberZero(){
 
 function holdFirstNum (num1){
     tempHolder = num1;
+    console.log(tempHolder);
 }
 
  
@@ -338,7 +340,6 @@ function negativePositive(){
     displayNumbers(tempNumber1);
     
 }
-
 
 
 

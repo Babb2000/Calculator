@@ -346,11 +346,33 @@ function backSpace(){
     let newString = container.slice(0,-1);
     tempNumber1 = newString;
     displayNumbers(tempNumber1);
-    
-  
-    
 
 }
 
+function turnOff(){
+    let container = document.getElementById('top-screen');
+    let divWrapper = container.childNodes[1]; //Since the the first element in the nodelist is a text node grab the preceding one
+    container.style.backgroundColor = "black";
+    let newDiv = document.createElement('div');
+    newDiv.classList.add("firstScreen");
+    let txt = document.createTextNode("Turning OFF");
+
+
+    divWrapper.appendChild(newDiv);
+    divWrapper.style.display = "flex";
+    divWrapper.style.justifyContent = "center";
+    divWrapper.style.alignItems = "center";
+    newDiv.style.fontSize = "40px";
+
+    newDiv.appendChild(txt);
+    container.appendChild(divWrapper);
+
+    setTimeout(turnOffText, 1500);
+
+
+   turnOn = function(){ //Assign an empty function to invoke the turnOn function only once
+
+   }
+}
 
 

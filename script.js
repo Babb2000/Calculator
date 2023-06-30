@@ -8,25 +8,6 @@ let subThem = " ";
 let multThem = " ";
 let divThem = " ";
 
-function addNum(num1, num2)
-{
-    return(num1 + num2);
-}
-
-function subNum(num1, num2)
-{
-    return(num1 - num2);
-}
-
-function multNum(num1, num2)
-{
-    return(num1 * num2);
-}
-
-function divdNum(num1, num2)
-{
-    return(num1 / num2);
-}
 
 function operate(string, num1, num2)
 {
@@ -34,7 +15,7 @@ function operate(string, num1, num2)
     if(string === "add")
     {
         
-        let an = addNum(num1,num2);
+        let an = calculator.add(num1, num2);
         displayNumbers(an);
         addThem = " ";
         tempHolder = " ";
@@ -42,7 +23,7 @@ function operate(string, num1, num2)
     }
     else if(string === "subtract")
     {
-        let ans = subNum(num1, num2);
+        let ans = calculator.subtract(num1, num2);
         displayNumbers(ans);
         subThem = " ";
         tempHolder = " ";
@@ -50,7 +31,7 @@ function operate(string, num1, num2)
     }
     else if(string === "multiply")
     {
-       let answ = multNum(num1, num2);
+       let answ = calculator.multiply(num1, num2);
        displayNumbers(answ);
        multThem = " ";
        tempHolder = " ";
@@ -63,7 +44,7 @@ function operate(string, num1, num2)
             displayNumbers("Sorry can't divide by zero");
             return;
         }
-        let answer = divdNum(num1, num2);
+        let answer = calculator.divide(num1, num2);
         displayNumbers(answer);
         divThem = " ";
         tempHolder = " ";
@@ -375,4 +356,42 @@ function turnOff(){
    }
 }
 
+
+//Create a Module that organizes the methods and variables of the calculator
+
+const calculator = (()=>{
+
+//Functions to perform numeric calculations
+const add = (num1, num2) => num1 + num2;
+const subtract = (num1, num2) => num1 - num2;
+const multiply = (num1, num2) => num1 * num2;
+const divide = (num1, num2) => num1 / num2;
+
+
+
+
+return {add, subtract, multiply, divide};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})();
 
